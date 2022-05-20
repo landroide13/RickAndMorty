@@ -10,9 +10,9 @@
 <ion-content>
 
   
-  <ion-card>
+  <ion-card class="ion-no-margin">
     <ion-card-header>
-      <img [src]="(character | async)?.image">
+      <img [src]="(character | async)?.image" class="img">
       <ion-card-title>{{ (character | async)?.name }}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
@@ -29,7 +29,12 @@
           <ion-label>Gender</ion-label>
           <ion-chip color="primary">{{ (character | async)?.gender }}</ion-chip> 
         </ion-item>
+        <ion-item *ngIf="(character | async)?.type">
+          <ion-label>Type</ion-label>
+          <ion-chip color="primary">{{ (character | async)?.type }}</ion-chip> 
+        </ion-item>
       </ion-list>
+     
     </ion-card-content>
   </ion-card>
 
