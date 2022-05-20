@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Character } from '../Class/character.model'
 import { DataService } from '../services/data.service';
@@ -12,7 +13,7 @@ export class HomePage {
 
   charList = [];
 
-  constructor(private charServ: DataService) {
+  constructor(private charServ: DataService, private router: Router) {
     this.charServ.getCharacters().subscribe(data => {
       this.charList = data.results;
       console.log(this.charList);

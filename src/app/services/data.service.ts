@@ -14,6 +14,10 @@ export class DataService {
     return this.http.get<any>(APICAR);
   }
 
+  getCharacter(id: number){
+    return this.http.get<any>(APICAR + "/" + id)
+  }
+
 
 }
 
