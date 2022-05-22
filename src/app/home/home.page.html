@@ -9,11 +9,11 @@
 <ion-content>
 
   <ion-list>
-    <ion-item *ngFor="let character of charList" [routerLink]="['/home',character.id]">
+    <ion-item *ngFor="let char of charList" [routerLink]="['/profile/' + char.id]">
       <ion-avatar slot="start">
-        <img [src]="character.image" alt="">
+        <img [src]="char.image" alt="">
       </ion-avatar>
-      <ion-label>{{ character.name}}</ion-label>
+      <ion-label>{{ char.name }}</ion-label>
     </ion-item>
   </ion-list>
   

@@ -11,10 +11,10 @@ import { DataService } from '../services/data.service';
 })
 export class HomePage {
 
-  charList = [];
+  charList: any;
 
   constructor(private charServ: DataService, private router: Router) {
-    this.charServ.getCharacters().subscribe(data => {
+    this.charServ.getCharacters().subscribe((data:any) => {
       this.charList = data.results;
       console.log(this.charList);
     }); 

@@ -10,12 +10,15 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  getCharacters(){
-    return this.http.get<any>(APICAR);
+  //<Character[]>
+
+  getCharacters():any{
+    const chars = this.http.get<any>(APICAR)
+    return chars;
   }
 
-  getCharacter(id: number){
-    return this.http.get<any>(APICAR + "/" + id)
+  getCharacter(id): Observable<Character>{
+    return this.http.get<Character>(APICAR + "/" + id)
   }
 
 

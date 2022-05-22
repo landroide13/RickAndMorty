@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons>
-    <ion-title> {{ (character | async)?.id }}'s Profile</ion-title>
+    <ion-title> {{ character.id }}'s Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,26 +12,26 @@
   
   <ion-card class="ion-no-margin">
     <ion-card-header>
-      <img [src]="(character | async)?.image" class="img">
-      <ion-card-title>{{ (character | async)?.name }}</ion-card-title>
+      <img [src]="character.image" class="img">
+      <ion-card-title>{{ character.name }}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <ion-list lines="none">
         <ion-item>
           <ion-label>Status</ion-label>
-          <ion-chip color="primary">{{ (character | async)?.status }}</ion-chip> 
+          <ion-chip color="primary">{{ character.status }}</ion-chip> 
         </ion-item>
         <ion-item>
           <ion-label>Species</ion-label>
-          <ion-chip color="primary">{{ (character | async)?.species }}</ion-chip> 
+          <ion-chip color="primary">{{ character.species }}</ion-chip> 
         </ion-item>
         <ion-item>
           <ion-label>Gender</ion-label>
-          <ion-chip color="primary">{{ (character | async)?.gender }}</ion-chip> 
+          <ion-chip color="primary">{{ character.gender }}</ion-chip> 
         </ion-item>
-        <ion-item *ngIf="(character | async)?.type">
+        <ion-item *ngIf="character.type">
           <ion-label>Type</ion-label>
-          <ion-chip color="primary">{{ (character | async)?.type }}</ion-chip> 
+          <ion-chip color="primary">{{ character.type }}</ion-chip> 
         </ion-item>
       </ion-list>
      
