@@ -9,6 +9,17 @@
 
 <ion-content>
 
+
+  <div class="" *ngIf="!character">
+    <ion-card>
+      <ion-skeleton-text class="SKimg" animated></ion-skeleton-text>
+      <ion-card-header>
+        <ion-card-title><ion-skeleton-text animated></ion-skeleton-text></ion-card-title>
+        <ion-card-title><ion-skeleton-text animated></ion-skeleton-text></ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </div>
+
   
   <ion-card class="ion-no-margin">
     <ion-card-header>
@@ -34,7 +45,6 @@
           <ion-chip color="primary">{{ character.type }}</ion-chip> 
         </ion-item>
       </ion-list>
-     
     </ion-card-content>
   </ion-card>
 

@@ -17,19 +17,19 @@ export class ProfilePage implements OnInit {
 
   constructor(private actRoute: ActivatedRoute, private dataServ: DataService) { }
 
-  ngOnInit() {
-    
+  display(){
     this.actRoute.paramMap.subscribe(paramMap => {
-
       const id = paramMap.get('id');
-
       console.log(id);
-      
       this.character = this.dataServ.getCharacter(id).subscribe((res: any) => this.character = res);
-
     })
-
   }
+
+  ngOnInit() {
+    this.display();
+  }
+
+  
 
 
 
