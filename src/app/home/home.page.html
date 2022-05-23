@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
       Rick and Morty App
     </ion-title>
@@ -9,7 +9,7 @@
 <ion-content>
 
   <ion-list>
-    <ion-item *ngFor="let char of charList" [routerLink]="['/profile/' + char.id]">
+    <ion-item *ngFor="let char of charList" [routerLink]="['profile' , char.id]">
       <ion-avatar slot="start">
         <img [src]="char.image" alt="">
       </ion-avatar>

@@ -24,13 +24,9 @@ export class ProfilePage implements OnInit {
       this.character = this.dataServ.getCharacter(id).subscribe((res: any) => this.character = res);
     })
   }
-
+   
   ngOnInit() {
     this.display();
   }
-
-  
-
-
 
 }

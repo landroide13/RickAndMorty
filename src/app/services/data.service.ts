@@ -19,7 +19,17 @@ export class DataService {
     return this.http.get<any>(APICAR + "/" + id)
   }
 
+  getLocations():any{
+    return this.http.get<any>(APILOC);
+  }
+
+  getEpisodes():any{
+    return this.http.get<any>(APIEPI);
+  }
+
 
 }
 
 const APICAR = "https://rickandmortyapi.com/api/character";
+const APILOC = "https://rickandmortyapi.com/api/location";
+const APIEPI = "https://rickandmortyapi.com/api/episode";
