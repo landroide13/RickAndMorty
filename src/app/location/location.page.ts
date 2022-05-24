@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-location',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LocationPage implements OnInit {
 
-  constructor() { }
+  locations: any[];
+
+  constructor(private dataServ: DataService) { }
+
+  display(){
+    return this.dataServ.getLocations().subscribe((data: any) => {
+      this.locations = data.results;
+      console.log(this.locations);
+    })
+  }
 
   ngOnInit() {
+    this.display();
   }
 
 }
